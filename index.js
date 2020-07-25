@@ -1,26 +1,50 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+//variable for votingAge
+//will need if statement to return if votingAge > 18
+
+const votingAge = 19;
+
+if (votingAge > 18) {
+    console.log("True")
+} else {
+    console.log("false")
+}
 
 
 
+//Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a 
+//second variable (no function required)
 
-//Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+//Step One: Declare a variable
+let myVar = true;
 
+//Step Two: Conditional
+    //conditional should change the value of myVar based on value assigned to a second variable. 
 
+let otherVar = 3;
 
+if(otherVar > 6) {
+    console.log(myVar)
+} else if(otherVar < 6) {
+    myVar = false;
+    console.log(myVar)
+}
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
-
+console.log(Number("1988"));
 
 //Task d: Write a function to multiply a*b 
 
 
+function multiplyNum(a, b) {
+    return a * b;
+}
 
+console.log(multiplyNum(3, 2));
 
 
 /************************************************************** Task 2 **************************************************************/
