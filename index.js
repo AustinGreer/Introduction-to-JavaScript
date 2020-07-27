@@ -125,7 +125,7 @@ if (rpc < 0.34) {
 } else {
     compChoice = "Scissors";
 }
-console.log(compChoice);
+//console.log(compChoice);
 
 function rpcGame (userChoice) {
     if (userChoice === "Rock" && compChoice === "Scissors" || userChoice === "Paper" && compChoice === "Rock" || userChoice === "Scissors" && compChoice === "Paper") {
@@ -143,12 +143,17 @@ console.log(rpcGame("Rock"));
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function kmConverter(km) {
+    mile = 0.62137 * km;
+    return mile;
+}
 
+console.log(kmConverter(2));
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+
 
 
 
