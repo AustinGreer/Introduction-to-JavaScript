@@ -116,8 +116,28 @@ console.log(dogFeeder(1, 15));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
-  
+let rpc = Math.random();
+
+if (rpc < 0.34) {
+    compChoice = "Rock";
+} else if (rpc < 0.67) {
+    compChoice = "Paper";
+} else {
+    compChoice = "Scissors";
+}
+console.log(compChoice);
+
+function rpcGame (userChoice) {
+    if (userChoice === "Rock" && compChoice === "Scissors" || userChoice === "Paper" && compChoice === "Rock" || userChoice === "Scissors" && compChoice === "Paper") {
+        return "you win!";
+    } else if (userChoice === "Rock" && compChoice === "Paper" || userChoice === "Scissors" && compChoice === "Rock" || userChoice === "Paper" && compChoiceq === "Scissors"){
+        return "You lose...";
+    } else if (userChoice === "Rock" && compChoice === "Rock" || userChoice === "Paper" && compChoice === "Paper" || userChoice === "Scissors" && compChoice === "Scissors") {
+        return "It's a tie.";
+    }
+}
+
+console.log(rpcGame("Rock"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -151,10 +171,21 @@ console.log(dogFeeder(1, 15));
 //60s should be D 
 //and anything below 60 should be F
   
+function myGrade (grade) {
+    if (grade >= 90) {
+        console.log("A");
+    } else if (grade <= 89 && grade >= 80) {
+        console.log("B");
+    } else if (grade <= 79 && grade >= 70) {
+        console.log("C");
+    } else if (grade <= 69 && grade >= 60) {
+        console.log("D");
+    } else {
+        console.log("F")
+    }
+}
 
-  
-  
-
+myGrade(93);
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
