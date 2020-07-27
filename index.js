@@ -154,7 +154,12 @@ console.log(kmConverter(2));
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
 
+function footConverter(foot) {
+    let cm = 30.48 * foot;
+    return cm;
+}
 
+console.log(footConverter(2));
 
 
 
@@ -162,7 +167,14 @@ console.log(kmConverter(2));
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+
+function annoyingSong (bottles) {
+    for (let i = bottles; i > 0; i--) {
+        console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`)
+    }
+}
+
+annoyingSong(99);
 
 
 
