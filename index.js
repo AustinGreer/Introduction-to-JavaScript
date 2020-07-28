@@ -1,33 +1,72 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+//variable for votingAge
+//will need if statement to return if votingAge > 18
+
+const votingAge = 19;
+
+if (votingAge > 18) {
+    console.log("True")
+} else {
+    console.log("false")
+}
 
 
 
+//Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a 
+//second variable (no function required)
 
-//Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
+//Step One: Declare a variable
+let myVar = true;
 
+//Step Two: Conditional
+    //conditional should change the value of myVar based on value assigned to a second variable. 
 
+let otherVar = 3;
 
+if(otherVar > 6) {
+    console.log(myVar)
+} else if(otherVar < 6) {
+    myVar = false;
+    console.log(myVar)
+}
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
+console.log(Number("1999"));
 
 
 //Task d: Write a function to multiply a*b 
 
 
+function multiplyNum(a, b) {
+    return a * b;
+}
 
+console.log(multiplyNum(3, 2));
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+/* Define Problem: We need a function that has code that when ran, it will convert one number, human years, to another number that represents dog years. One human year = 7 dog years. */
 
+/* What we need to complete task:
+    1. A function
+    2. A variable to represent human years.
+    3. A variable to represent dog years. 
+    4. Multiply human years by seven. That is what will equal the dog years.
+    5. The function should return dog years */
+
+function dogAge(years) {
+    const dogYears = years * 7;
+    return dogYears
+}
+
+console.log(dogAge(7));
 
 
 
@@ -48,7 +87,27 @@
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
+
+function dogFeeder (age, weight) {
+    if (age >= 1) {
+        if (weight <= 5) {
+            return weight * 0.05;
+        } else if (weight >= 6 && weight <= 10) {
+            return weight * 0.04;
+        } else if (weight >= 11 && weight <= 15) {
+            return weight * 0.03;
+        } else if (weight > 15) {
+            return weight * 0.02;
+    }
+    } else if (age >= 0.16666667 && age < 0.25) {
+        return weight * 0.10;
+    } else if (age >= 0.25 && age < 0.58333333) {
+        return weight * 0.05;
+    } else if (age >= 0.58333333 && age < 1) {
+        return weight * 0.04;
+    }
+}
+console.log(dogFeeder(1, 15));
 
 
 
@@ -60,20 +119,49 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
-  
+
+function rpcGame (userChoice) {
+    const rpc = Math.random();
+
+if (rpc < 0.34) {
+    compChoice = "Rock";
+} else if (rpc < 0.67) {
+    compChoice = "Paper";
+} else {
+    compChoice = "Scissors";
+}
+    if (userChoice === "Rock" && compChoice === "Scissors" || userChoice === "Paper" && compChoice === "Rock" || userChoice === "Scissors" && compChoice === "Paper") {
+        return "you win!";
+    } else if (userChoice === "Rock" && compChoice === "Paper" || userChoice === "Scissors" && compChoice === "Rock" || userChoice === "Paper" && compChoiceq === "Scissors"){
+        return "You lose...";
+    } else if (userChoice === "Rock" && compChoice === "Rock" || userChoice === "Paper" && compChoice === "Paper" || userChoice === "Scissors" && compChoice === "Scissors") {
+        return "It's a tie.";
+    }
+}
+
+console.log(rpcGame("Rock"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function kmConverter(km) {
+    mile = 0.62137 * km;
+    return mile;
+}
 
+console.log(kmConverter(2));
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
 
+function footConverter(foot) {
+    let cm = 30.48 * foot;
+    return cm;
+}
+
+console.log(footConverter(2));
 
 
 
@@ -81,7 +169,14 @@
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+
+function annoyingSong (bottles) {
+    for (let i = bottles; i > 0; i--) {
+        console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`)
+    }
+}
+
+annoyingSong(99);
 
 
 
@@ -95,10 +190,21 @@
 //60s should be D 
 //and anything below 60 should be F
   
+function myGrade (grade) {
+    if (grade >= 90) {
+        console.log("Great job! You've earned an A!");
+    } else if (grade <= 89 && grade >= 80) {
+        console.log("Nice job! You've earned a B!");
+    } else if (grade <= 79 && grade >= 70) {
+        console.log("Keep working! You've earned a C.");
+    } else if (grade <= 69 && grade >= 60) {
+        console.log("You may want to go over the material again. You've earned a D.");
+    } else {
+        console.log("Sorry, but you have earned an F.")
+    }
+}
 
-  
-  
-
+myGrade(93);
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
