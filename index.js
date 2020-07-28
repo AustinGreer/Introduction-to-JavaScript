@@ -35,7 +35,8 @@ if(otherVar > 6) {
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-console.log(Number("1988"));
+console.log(Number("1999"));
+
 
 //Task d: Write a function to multiply a*b 
 
@@ -61,7 +62,7 @@ console.log(multiplyNum(3, 2));
     5. The function should return dog years */
 
 function dogAge(years) {
-    let dogYears = years * 7;
+    const dogYears = years * 7;
     return dogYears
 }
 
@@ -88,14 +89,16 @@ console.log(dogAge(7));
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
 
 function dogFeeder (age, weight) {
-    if (age >= 1 && weight <= 5) {
-        return weight * 0.05;
-    } else if (age >= 1 && weight >= 6 && weight <= 10) {
-        return weight * 0.04;
-    } else if (age >= 1 && weight >= 11 && weight <= 15) {
-        return weight * 0.03;
-    } else if (age >= 1 && weight > 15) {
-        return weight * 0.02;
+    if (age >= 1) {
+        if (weight <= 5) {
+            return weight * 0.05;
+        } else if (weight >= 6 && weight <= 10) {
+            return weight * 0.04;
+        } else if (weight >= 11 && weight <= 15) {
+            return weight * 0.03;
+        } else if (weight > 15) {
+            return weight * 0.02;
+    }
     } else if (age >= 0.16666667 && age < 0.25) {
         return weight * 0.10;
     } else if (age >= 0.25 && age < 0.58333333) {
@@ -116,7 +119,9 @@ console.log(dogFeeder(1, 15));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-let rpc = Math.random();
+
+function rpcGame (userChoice) {
+    const rpc = Math.random();
 
 if (rpc < 0.34) {
     compChoice = "Rock";
@@ -125,9 +130,6 @@ if (rpc < 0.34) {
 } else {
     compChoice = "Scissors";
 }
-//console.log(compChoice);
-
-function rpcGame (userChoice) {
     if (userChoice === "Rock" && compChoice === "Scissors" || userChoice === "Paper" && compChoice === "Rock" || userChoice === "Scissors" && compChoice === "Paper") {
         return "you win!";
     } else if (userChoice === "Rock" && compChoice === "Paper" || userChoice === "Scissors" && compChoice === "Rock" || userChoice === "Paper" && compChoiceq === "Scissors"){
@@ -190,15 +192,15 @@ annoyingSong(99);
   
 function myGrade (grade) {
     if (grade >= 90) {
-        console.log("A");
+        console.log("Great job! You've earned an A!");
     } else if (grade <= 89 && grade >= 80) {
-        console.log("B");
+        console.log("Nice job! You've earned a B!");
     } else if (grade <= 79 && grade >= 70) {
-        console.log("C");
+        console.log("Keep working! You've earned a C.");
     } else if (grade <= 69 && grade >= 60) {
-        console.log("D");
+        console.log("You may want to go over the material again. You've earned a D.");
     } else {
-        console.log("F")
+        console.log("Sorry, but you have earned an F.")
     }
 }
 
